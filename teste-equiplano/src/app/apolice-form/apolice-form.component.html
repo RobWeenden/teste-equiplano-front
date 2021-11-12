@@ -1,0 +1,41 @@
+<div>
+<form>
+  <div class="row">
+    <div class="form-group col-3">
+      <label for="aplIniVigencia">Data Inicio:</label>
+      <div class="input-group">
+      <input type="text" class="form-control" id="aplIniVigencia"
+        name="aplIniVigencia" aria-describedby="emailHelp" [(ngModel)]="apolice.aplIniVigencia"
+        ngbDatepicker #aplIniVigencia="ngbDatepicker">
+        <div class="input-group-append" >
+          <button class="btn btn-primary"  (click)="aplIniVigencia.toggle()" type="button" ></button>
+        </div>
+      </div>
+    </div>
+    <div class="col-3">
+      <label for="aplFimVigencia">Data Fim:</label>
+      <div class="input-group">
+
+      <input type="text" class="form-control"
+        id="aplFimVigencia" name="aplFimVigencia" [(ngModel)]="apolice.aplFimVigencia"
+        ngbDatepicker #aplFimVigencia="ngbDatepicker">
+        <div class="input-group-append" >
+          <button class="btn btn-primary"  (click)="aplFimVigencia.toggle()" type="button" ></button>
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-4">
+      <label for="aplPlacaVeic">PLACA DO VEICULO:</label>
+      <input type="text" class="form-control" id="aplPlacaVeic" name="aplPlacaVeic" [(ngModel)]="apolice.aplPlacaVeic" >
+
+    </div>
+    <div class="form-group">
+      <label for="aplValor">Valor</label>
+      <input type="text" class="form-control" id="aplValor"  name="aplValor" [(ngModel)]="apolice.aplValor"
+        currencyMask [options]="{prefix: 'R$', thousands: '.', decimal: ','}"
+        placeholder="(R$)">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="getSalvarApolice()">Salvar</button>
+</form>
+</div>

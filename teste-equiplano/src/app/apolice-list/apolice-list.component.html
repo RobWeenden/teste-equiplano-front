@@ -1,0 +1,44 @@
+<div>
+  <form class="row g-3 form-inline">
+  <div class="row">
+    <div class="col-auto ">
+      <input type="text" class="form-control"  placeholder="Digite o numero Apolice" id="numApolice" name="numApolice" [(ngModel)]="numApolice" >
+    </div>
+
+      <div class="form-group">
+        <button type="button" class="btn btn-primary mb-3 " (click)="getBuscarNumeroApolice()">Buscar</button>&nbsp;
+        <button type="button" class="btn btn-primary mb-3" [routerLink]="['/apolice/form']">Novo</button>
+    </div>
+  </div>
+  </form>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">CODIGO</th>
+        <th scope="col">NUMERO</th>
+        <th scope="col">DATA INICIO</th>
+        <th scope="col">DATA FIM</th>
+        <th scope="col">NUMERO DA PLACA</th>
+        <th scope="col">VALOR</th>
+        <th>Editar</th>
+        <th>Deletar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let apolice of apolices; let i = index">
+        <td>{{apolice.id}}</td>
+        <td>{{apolice.aplNumero}}</td>
+        <td>{{apolice.aplIniVigencia}}</td>
+        <td>{{apolice.aplFimVigencia}}</td>
+        <td>{{apolice.aplPlacaVeic}}</td>
+        <td>R$ {{apolice.aplValor }}</td>
+        <td>
+          <button type="button" class="btn btn-primary" [routerLink]="['/apolice/form', apolice.id]">Editar</button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-primary" (click)="getDeletarApolice(apolice.id, i)">Deletar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

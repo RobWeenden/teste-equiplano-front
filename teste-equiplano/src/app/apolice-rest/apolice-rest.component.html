@@ -1,0 +1,16 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">SISTEMA DE BUSCA DE APOLICE</h5>
+    <p class="card-text">Segue abaixo as informações a respeito do apolice de numero: <b>{{numeroApolice}}</b>  para devidas exigencias e ajustes do proprietario</p>
+  </div>
+  <ul class="list-group list-group-flush" >
+    <li class="list-group-item">Status: <b>{{mensagemVencimento}}</b></li>
+    <li class="list-group-item">Dias de Vencimento: <b>{{qtdVencimento}}</b> </li>
+    <li class="list-group-item">Placa do Veiculo: <b>{{placaVeiculo}}</b></li>
+    <li class="list-group-item">Valor Total: <b> R$ {{valorApolice}}</b></li>
+  </ul>
+  <div class="card-body">
+    <button type="button" class="btn btn-primary mb-3 " [routerLink]="['/apolice/lista']">Voltar</button>&nbsp;
+
+  </div>
+</div>
